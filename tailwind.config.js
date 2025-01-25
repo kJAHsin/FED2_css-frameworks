@@ -8,6 +8,9 @@ export default {
                 med: 'clamp(1.5rem, 2.5vw, 2.5rem)',
                 chub: 'clamp(2.75rem, 4vw, 4rem)',
             },
+            backgroundSize: {
+                'hover-reveal': '400%',
+            },
         },
         fontFamily: {
             skinny: ['Quicksand', 'system-ui', 'Ubuntu', 'sans-serif'],
