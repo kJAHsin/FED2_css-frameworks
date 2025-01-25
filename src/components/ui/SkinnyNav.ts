@@ -33,12 +33,27 @@ class SkinnyNav extends HTMLElement {
     connectedCallback() {
         console.log('SkinnyNav connected yo!');
         console.log(this.navLinks || 'what the heck?');
+
+        this.addElementToDOM(this);
     }
 
-    // addElementToDOM() {
-    //     const nav = document.createElement('ul');
-    //     nav.role = 'navigation';
-    // }
+    addElementToDOM(parent: HTMLElement) {
+        const nav = document.createElement('ul');
+        nav.role = 'navigation';
+        parent.appendChild(nav);
+        this.addLinksToNav(nav);
+    }
+
+    addLinksToNav(parent: HTMLElement) {
+        for (const key in this.navLinks) {
+            const link = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = this.navLinks[key].link;
+            a.textContent = this.navLinks[key].textContent;
+            link.appendChild(a);
+            parent.appendChild(link);
+        }
+    }
 }
 
 customElements.define('skinny-nav', SkinnyNav);

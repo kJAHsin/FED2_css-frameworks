@@ -19,7 +19,7 @@ class SkinnyHeader extends HTMLElement {
         header.className = 'bg-powder_blue-300 font-skinny';
 
         header.innerHTML = `
-            <div class="desk:py-chub desk:px-med pad:py-med pad:px-skinny mob:py-skinny mob:px-skinny max-w-wrapper mx-auto">
+            <div class="desk:py-chub desk:px-med pad:py-med pad:px-skinny mob:py-skinny mob:px-skinny max-w-wrapper mx-auto  flex justify-between items-center">
                 <h1 class="text-tea_green-600 text-4xl">FAKE<span class="text-baby_powder-300">book</span></h1>
                 <skinny-nav></skinny-nav>
             </div>

@@ -5,8 +5,8 @@ export default {
         extend: {
             spacing: {
                 skinny: '0.25rem',
-                med: '2rem',
-                chub: '3.5rem',
+                med: 'clamp(1.5rem, 2.5vw, 2.5rem)',
+                chub: 'clamp(2.75rem, 4vw, 4rem)',
             },
         },
         fontFamily: {
