@@ -2,8 +2,35 @@
 export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
-        extend: {},
+        extend: {
+            spacing: {
+                skinny: '0.25rem',
+                med: '2rem',
+                chub: '3.5rem',
+            },
+        },
+        fontFamily: {
+            skinny: ['Quicksand', 'system-ui', 'Ubuntu', 'sans-serif'],
+            uni: ['unicode'],
+        },
+        screens: {
+            mob: '200px',
+            pad: '720px',
+            desk: '900px',
+        },
+        borderWidth: {
+            '0': 'none',
+            '1': '1px',
+            '2': '2px',
+            'chub': '4px',
+        },
+        maxWidth: {
+            wrapper: '1560px',
+        },
         colors: {
+            black: {
+                DEFAULT: '#000',
+            },
             slate_gray: {
                 DEFAULT: '#738290',
                 100: '#171a1d',
