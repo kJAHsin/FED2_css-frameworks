@@ -4,7 +4,7 @@ import './components/layout/SkinnyHeader.ts';
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <skinny-header></skinny-header>
-    <Main />
-    <Footer />
+    <main></main>
+    <skinny-footer></skinny-footer>
   </div>
 `;
