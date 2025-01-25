@@ -1,7 +1,10 @@
-import './style.css'
+import "./style.css";
+import "./components/SkinnyHeader.ts";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
-    <h1 class="font-sans text-base text-red-900">I love beans</h1>
+    <skinny-header></skinny-header>
+    <Main />
+    <Footer />
   </div>
-`
+`;
