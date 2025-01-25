@@ -1,0 +1,30 @@
+# Configuration files
+.eslint.config.json
+.husky
+.prettierignore
+.prettierrc
+.vscode
+postcss.config.js
+tailwind.config.js
+tsconfig.json
+
+# Project files
+package-lock.json
+package.json
+README.md
+
+# Directories
+dist
+node_modules
+
+# Log files
+*.log
+
+# HTML files
+index.html
+
+# CSS files
+src/style.css
+
+# Git files
+.gitignore

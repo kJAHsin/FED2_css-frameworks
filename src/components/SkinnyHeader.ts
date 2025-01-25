@@ -1,13 +1,13 @@
 class SkinnyHeader extends HTMLElement {
-  constructor() {
-    super();
+    constructor() {
+        super();
 
-    this.attachShadow({ mode: "open" });
-  }
+        this.attachShadow({ mode: 'open' });
+    }
 
-  connectedCallback() {
-    console.log("SkinnyHeader connected");
-  }
+    connectedCallback() {
+        console.log('SkinnyHeader connected');
+    }
 }
 
-customElements.define("skinny-header", SkinnyHeader);
+customElements.define('skinny-header', SkinnyHeader);

@@ -1,7 +1,7 @@
-import "./style.css";
-import "./components/SkinnyHeader.ts";
+import './style.css';
+import './components/SkinnyHeader.ts';
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <skinny-header></skinny-header>
     <Main />
