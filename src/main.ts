@@ -1,5 +1,5 @@
 import './style.css';
-import './components/SkinnyHeader.ts';
+import './components/layout/SkinnyHeader.ts';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
