@@ -2,7 +2,6 @@ import './style.css';
 import './components/layout/SkinnyHeader.ts';
 import './components/layout/SkinnyFooter.ts';
 
-console.clear();
 renderMainContent();
 
 async function router(page: string = window.location.pathname) {
@@ -31,7 +30,6 @@ async function router(page: string = window.location.pathname) {
 				break;
 		}
 	}
-	return render404();
 }
 
 async function renderMainContent() {
