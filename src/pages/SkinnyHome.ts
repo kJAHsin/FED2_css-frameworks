@@ -1,3 +1,5 @@
+import '../components/ui/SkinnyWelcome.ts';
+
 class SkinnyHome extends HTMLElement {
 	constructor() {
 		super();
@@ -17,6 +19,7 @@ class SkinnyHome extends HTMLElement {
 			<div>
 				<h1 class="text-4xl text-slate-900">Home</h1>
 				<p class="text-tea_green-400">This is the home page.</p>
+				<skinny-welcome></skinny-welcome>
 			</div>
 			`;
 		parent.appendChild(wrapper);
