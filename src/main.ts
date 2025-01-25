@@ -38,7 +38,7 @@ async function renderMainContent() {
 	document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div>
       <skinny-header></skinny-header>
-      <main class="min-h-screen">
+      <main>
         ${await router()}
       </main>
       <skinny-footer></skinny-footer>
