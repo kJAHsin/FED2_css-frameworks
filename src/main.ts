@@ -1,6 +1,7 @@
 import './style.css';
 import './components/layout/SkinnyHeader.ts';
 import './components/layout/SkinnyFooter.ts';
+import setPageTitle from './utilities/setPageTitle.ts';
 
 renderMainContent();
 
@@ -11,18 +12,23 @@ async function router(page: string = window.location.pathname) {
 		switch (page) {
 			case '/':
 				await import('./pages/SkinnyHome.ts');
+				setPageTitle(page, null);
 				return '<skinny-home></skinny-home>';
 			case '/login/':
 				await import('./pages/SkinnyLogin.ts');
+				setPageTitle(page, null);
 				return '<skinny-login></skinny-login>';
 			case '/register/':
 				await import('./pages/SkinnyRegister.ts');
+				setPageTitle(page, null);
 				return '<skinny-register></skinny-register>';
 			case '/feed/':
 				await import('./pages/SkinnyFeed.ts');
+				setPageTitle(page, null);
 				return '<skinny-feed></skinny-feed>';
 			case '/profile/':
 				await import('./pages/SkinnyProfile.ts');
+				setPageTitle(page, null);
 				return '<skinny-profile></skinny-profile>';
 			default:
 				console.error('404: page not found, my guy!');
