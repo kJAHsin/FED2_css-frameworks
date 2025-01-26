@@ -1,6 +1,6 @@
 export default function setPageTitle(
 	page: string,
-	userName: string | null,
+	userName: string | null = getUserName(),
 ): void {
 	let title: string;
 
@@ -29,4 +29,9 @@ export default function setPageTitle(
 	}
 
 	document.title = title !== null ? title : 'FAKEbook';
+}
+
+function getUserName(): string | null {
+	console.log(localStorage.getItem('userName'));
+	return localStorage.getItem('userName');
 }
