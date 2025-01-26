@@ -27,7 +27,7 @@ class SkinnyLogin extends HTMLElement {
 		form.action = '/profile/';
 		form.method = 'POST';
 		form.className =
-			'bg-nyanza-400 mt-4 mx-auto space-y-4 px-squish py-squish rounded-md';
+			'max-w-wrapper bg-nyanza-400 mx-auto desk:p-chub desk:pt-med pad:p-med pad:pt-squish mob:p-skinny';
 		form.innerHTML = `
 			<div>
 				<label for="email" class="block text-sm font-medium text-gray-700">Email</label>

@@ -1,6 +1,6 @@
 export default function setPageTitle(
 	page: string,
-	userName: string | null = getUserName(),
+	userName: string | null = getUserName()
 ): void {
 	let title: string;
 

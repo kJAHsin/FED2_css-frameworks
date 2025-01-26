@@ -1,3 +1,5 @@
+import tailwindConfig from '../../../tailwind.config.js';
+
 interface NavLinks {
 	textContent: string;
 	link: string;
@@ -32,6 +34,7 @@ const navLinks: NavLinksLabels = {
 
 class SkinnyNav extends HTMLElement {
 	navLinks: NavLinksLabels = {};
+	menuOpen: boolean = false;
 
 	constructor() {
 		super();
@@ -47,7 +50,9 @@ class SkinnyNav extends HTMLElement {
 	addElementToDOM(parent: HTMLElement) {
 		const nav = document.createElement('ul');
 		nav.role = 'navigation';
-		nav.className = 'group flex pad:space-x-chub space-x-skinny';
+		nav.className =
+			'group flex desk:flex-row flex-col items-start desk:space-x-chub desk:space-y-0 space-y-med fixed top-skinny right-skinny desk:static';
+		nav.style.display = this.isMenuOpen() ? 'flex' : 'none';
 		parent.appendChild(nav);
 		this.addLinksToNav(nav);
 	}
@@ -60,11 +65,27 @@ class SkinnyNav extends HTMLElement {
 			link.textContent = this.navLinks[key].textContent;
 
 			listItem.className =
-				'pad:text-2xl text-tea_green-800 group-hover:text-tea_green-500 transition-all duration-300 hover:underline underline-offset-8 p-0';
+				'pad:text-2xl border-2 border-tea_green-100 text-tea_green-800 group-hover:text-tea_green-500 transition-all duration-300 hover:underline underline-offset-8 p-0';
 			link.className = 'py-skinny px-skinny';
 
 			listItem.appendChild(link);
 			parent.appendChild(listItem);
+		}
+	}
+
+	getBreakpointValue(): number {
+		// const tailwindConfig = await loadTailwindConfig();
+		const breakpoint = tailwindConfig.theme.screens.pad;
+		console.log(parseInt(breakpoint, 10));
+		return parseInt(breakpoint, 10);
+	}
+
+	isMenuOpen(): boolean {
+		const breakpoint = this.getBreakpointValue();
+		if (window.innerWidth > breakpoint) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 }

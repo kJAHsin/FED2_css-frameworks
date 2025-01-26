@@ -40,7 +40,7 @@ async function router(page: string = window.location.pathname) {
 
 async function renderMainContent() {
 	document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-    <div>
+    <div class="grid w-full">
       <skinny-header></skinny-header>
       <main>
         ${await router()}
