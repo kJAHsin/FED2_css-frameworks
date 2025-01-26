@@ -154,24 +154,45 @@ class SkinnyFeed extends HTMLElement {
 		wrapper.className =
 			'max-w-wrapper bg-slate-100 mx-auto desk:p-chub desk:pt-med pad:p-med pad:pt-squish mob:p-skinny';
 		wrapper.innerHTML = `
-				<h1 class="text-4xl text-slate-900">Feed</h1>
-				<p class="text-tea_green-400">This is the page where you get to spy on people.</p>
-				<form name="newPost" class="grid w-fit place-content-center bg-nyanza space-y-med desk:p-med pad:p-squish p-skinny mx-auto mt-med rounded-md">
+			<h1 class="text-4xl text-slate-900">Feed</h1>
+			<p class="text-tea_green-400">This is the page where you get to spy on people.</p>
+			<div class="flex flex-col gap-squish items-center pad:flex-row pad:justify-center w-full max-w-wrapper">
+				<form name="sortPosts" class="grid w-fit place-content-center bg-nyanza space-y-med desk:p-med pad:p-squish p-skinny mt-med rounded-md">
+					<h2 class="text-2xl text-tea_green-200">Refine Search</h2>
+					<div class="flex items-center gap-squish">
+						<label for="search" class="text-nowrap">Find a post: </label>
+						<input type="text" name="search" id="search" class="p-skinny rounded-md w-full" />
+					</div>
+					<button type="submit" class="bg-powder_blue-500 text- p-squish rounded-md">Search</button>
+					<div class="flex items-center gap-squish">
+						<label for="filterDate" class="text-nowrap">Filter by Date: </label>
+						<input type="date" name="filterDate" id="filterDate" class="p-skinny rounded-md border w-full" />
+					</div>
+					<div class="grid gap-squish">
+						<div class="flex items-center gap-squish">
+							<label for="filterUser">Filter by User: </label>
+							<input type="text" name="filterUser" id="filterUser" class="p-skinny rounded-md border" />
+						</div>
+						<button type="button" class="bg-powder_blue-500 text-slate-900 p-squish rounded-md" id="applyFilters">Apply Filters</button>
+					</div>
+				</form>
+				<form name="newPost" class="grid w-fit place-content-center bg-nyanza space-y-med desk:p-med pad:p-squish p-skinny mt-med rounded-md">
+					<h2 class="text-2xl text-tea_green-200">New Post</h2>
 					<div class="flex flex-col">
 						<label for="postText" class="text-slate-900">Post Text:</label>
-						<textarea id="postText" maxLength="80" name="postText" class="p-skinny rounded-md border border-slate-300 resize-none">
-						</textarea>
+						<textarea id="postText" maxLength="80" name="postText" class="p-skinny rounded-md border resize-none"></textarea>
 					</div>
 					<div class="flex flex-col">
 						<label for="postUrl" class="text-slate-900">Post URL:</label>
-						<input type="url" id="postUrl" name="postUrl" class="p-skinny rounded-md border border-slate-300">
+						<input type="url" id="postUrl" name="postUrl" class="p-skinny rounded-md border" />
 					</div>
 					<button type="submit" class="bg-powder_blue-500 text-slate-900 p-squish rounded-md">Post</button>
 				</form>
-				<ul id="posts" class="grid w-fit place-content-center bg-nyanza space-y-med desk:p-med pad:p-squish p-skinny mx-auto mt-med rounded-md">
-					${this.generateFakePosts()}
-				</ul>
-			`;
+			</div>
+			<ul id="posts" class="grid w-fit place-content-center bg-nyanza space-y-med desk:p-med pad:p-squish p-skinny mx-auto mt-med rounded-md">
+				${this.generateFakePosts()}
+			</ul>
+		`;
 		parent.appendChild(wrapper);
 		console.log('wrapper appended to: ', parent);
 	}
