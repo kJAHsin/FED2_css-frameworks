@@ -16,7 +16,7 @@ class SkinnyFooter extends HTMLElement {
 
 		const footer = document.createElement('footer');
 		footer.className =
-			'bg-powder_blue-200 font-skinny w-full absolute bottom-0 top-auto inset-y-0';
+			'bg-powder_blue-200 font-skinny w-full top-auto inset-y-0';
 
 		footer.innerHTML = `
             <div class="py-chub max-w-wrapper flex justify-center">footer</div>
