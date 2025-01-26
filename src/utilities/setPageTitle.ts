@@ -32,6 +32,5 @@ export default function setPageTitle(
 }
 
 function getUserName(): string | null {
-	console.log(localStorage.getItem('userName'));
 	return localStorage.getItem('userName');
 }

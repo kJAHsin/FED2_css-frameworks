@@ -6,9 +6,7 @@ import setPageTitle from './utilities/setPageTitle.ts';
 renderMainContent();
 
 async function router(page: string = window.location.pathname) {
-	console.log('routing!');
 	if (page) {
-		console.log('routing to page: ', page);
 		switch (page) {
 			case '/':
 				await import('./pages/SkinnyHome.ts');

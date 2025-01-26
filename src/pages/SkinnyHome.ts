@@ -6,8 +6,6 @@ class SkinnyHome extends HTMLElement {
 	}
 
 	connectedCallback() {
-		console.log('Home connected yo!');
-
 		this.addElementToDOM(this);
 	}
 
@@ -21,7 +19,6 @@ class SkinnyHome extends HTMLElement {
 				<skinny-welcome></skinny-welcome>			
 			`;
 		parent.appendChild(wrapper);
-		console.log('wrapper appended to: ', parent);
 	}
 }
 

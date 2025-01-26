@@ -62,7 +62,7 @@ class SkinnyProfile extends HTMLElement {
 			<div class="w-fit mx-auto desk:my-chub pad:my-med mob:my-squish">
                 <img src="https://i.pravatar.cc/150?img=1" alt="Profile Image" class="w-32 h-32 rounded-full mx-auto">
                 <h2 class="text-2xl text-center mt-2 p-squish text-powder_blue-800 capitalize">${localStorage.getItem('userName') || 'User'}</h2>
-				<button id="follow" class="bg-powder_blue hover:bg-powder_blue-200 hover:text-powder_blue-800 text-powder_blue-100 transition-colors px-4 py-2 rounded-md mt-4 mx-auto block">
+				<button id="follow" class="bg-powder_blue hover:bg-powder_blue-200 hover:text-powder_blue-800 text-powder_blue-100 transition-colors px-4 py-2 rounded-md mb-med mx-auto block">
 					Follow
 				</button>
 				<div class="text-center">

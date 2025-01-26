@@ -4,8 +4,6 @@ class SkinnyRegister extends HTMLElement {
 	}
 
 	connectedCallback() {
-		console.log('Registrrrrration page connected yo!');
-
 		this.addElementToDOM(this);
 	}
 
@@ -18,7 +16,6 @@ class SkinnyRegister extends HTMLElement {
 				<p class="text-tea_green-400">This is the registration page.</p>
 			`;
 		parent.appendChild(wrapper);
-		console.log('wrapper appended to: ', parent);
 	}
 }
 

@@ -143,8 +143,6 @@ class SkinnyFeed extends HTMLElement {
 	}
 
 	connectedCallback() {
-		console.log('Feed page connected yo!');
-
 		this.addElementToDOM(this);
 		this.setupFormHandler();
 	}
@@ -194,7 +192,6 @@ class SkinnyFeed extends HTMLElement {
 			</ul>
 		`;
 		parent.appendChild(wrapper);
-		console.log('wrapper appended to: ', parent);
 	}
 
 	setupFormHandler() {
@@ -219,7 +216,6 @@ class SkinnyFeed extends HTMLElement {
 		const userName = localStorage.getItem('userName') || 'Anonymous';
 
 		const newPostKey = Object.keys(this.dummyPosts).length;
-		console.log(newPostKey);
 		this.dummyPosts[newPostKey] = {
 			post: postText,
 			url: postUrl ? postUrl : 'https://loremflickr.com/1280/720',
@@ -232,7 +228,6 @@ class SkinnyFeed extends HTMLElement {
 
 	refreshPosts() {
 		const postsContainer = this.querySelector('#posts');
-		console.log(postsContainer);
 		if (postsContainer) {
 			postsContainer.innerHTML = this.generateFakePosts();
 		}

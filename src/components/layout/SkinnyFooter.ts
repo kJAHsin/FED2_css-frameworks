@@ -7,8 +7,6 @@ class SkinnyFooter extends HTMLElement {
 	}
 
 	connectedCallback() {
-		// console.log('SkinnyFooter connected');
-
 		const shadow = this.shadowRoot;
 		if (!shadow) return;
 
@@ -16,10 +14,10 @@ class SkinnyFooter extends HTMLElement {
 
 		const footer = document.createElement('footer');
 		footer.className =
-			'bg-powder_blue-200 font-skinny w-full top-auto inset-y-0';
+			'w-full inset-y-0 top-auto bg-powder_blue-200 font-skinny';
 
 		footer.innerHTML = `
-            <div class="py-chub max-w-wrapper flex justify-center">footer</div>
+            <div class="flex justify-center max-w-wrapper py-chub">footer</div>
         `;
 
 		if (shadow !== null) this.addElementToParent(footer, shadow);

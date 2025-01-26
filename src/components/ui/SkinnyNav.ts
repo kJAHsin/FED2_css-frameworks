@@ -44,7 +44,6 @@ class SkinnyNav extends HTMLElement {
 	}
 
 	connectedCallback() {
-		console.log('SkinnyNav connected yo!');
 		this.addElementToDOM(this);
 		this.updateMenuVisibility();
 		window.addEventListener('resize', () => this.updateMenuVisibility());

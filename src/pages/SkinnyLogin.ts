@@ -17,7 +17,6 @@ class SkinnyLogin extends HTMLElement {
 			`;
 		this.addLoginForm(wrapper);
 		parent.appendChild(wrapper);
-		console.log('wrapper appended to: ', parent);
 	}
 
 	addLoginForm(parent: HTMLElement) {
@@ -62,8 +61,6 @@ class SkinnyLogin extends HTMLElement {
 				<h2 class="text-2xl text-slate-900 text-center">Well, look at you!</h2>
 				<p class="text-tea_green-100 text-center text-balance mx-auto max-w-[28ch]">You managed to log in. Wasn't that hard, was it? Congrats anyway, champ!</p>
 			`;
-			console.log('login successful!');
-			console.log('redirecting to profile page...');
 			setTimeout(() => {
 				window.location.pathname = '/profile/';
 				window.localStorage.setItem('userName', userName);

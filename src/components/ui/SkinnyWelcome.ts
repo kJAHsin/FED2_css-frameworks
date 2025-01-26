@@ -4,7 +4,6 @@ class SkinnyWelcome extends HTMLElement {
 	}
 
 	connectedCallback() {
-		console.log('SkinnyWelcome connected yo!');
 		this.addElementToDOM(this);
 		this.className = 'grid place-content-center';
 	}
