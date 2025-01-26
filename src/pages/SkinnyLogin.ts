@@ -4,18 +4,16 @@ class SkinnyLogin extends HTMLElement {
 	}
 
 	connectedCallback() {
-		console.log('Login page connected yo!');
-
 		this.addElementToDOM(this);
 	}
 
 	addElementToDOM(parent: HTMLElement) {
 		const wrapper = document.createElement('div');
 		wrapper.className =
-			'grid max-w-wrapper bg-slate-100 mx-auto desk:p-chub pad:p-med mob:p-skinny';
+			'grid max-w-wrapper bg-slate-100 mx-auto desk:p-chub p-med gap-skinny';
 		wrapper.innerHTML = `
 				<h1 class="text-4xl text-slate-900">Login</h1>
-				<p class="text-tea_green-400">This is the login page.</p>
+				<p class="text-tea_green-400 mb-med">This is the login page.</p>
 			`;
 		this.addLoginForm(wrapper);
 		parent.appendChild(wrapper);
@@ -27,7 +25,7 @@ class SkinnyLogin extends HTMLElement {
 		form.action = '/profile/';
 		form.method = 'POST';
 		form.className =
-			'max-w-wrapper bg-nyanza-400 mx-auto desk:p-chub desk:pt-med pad:p-med pad:pt-squish mob:p-skinny';
+			'max-w-wrapper grid gap-squish rounded-md bg-nyanza-400 mx-auto desk:p-chub desk:pt-med pad:p-med pad:pt-squish p-squish';
 		form.innerHTML = `
 			<div>
 				<label for="email" class="block text-sm font-medium text-gray-700">Email</label>
@@ -35,7 +33,7 @@ class SkinnyLogin extends HTMLElement {
 			</div>
 			<div>
 				<label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-				<input type="password" id="password" name="password" minLength="8" required class="mt-1 inline-block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tea_green-500 focus:border-tea_green-500 invalid:outline-baby_powder-100 sm:text-sm">
+				<input type="password" id="password" name="password" minLength="8" required class="mt-1 inline-block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-tea_green-500 focus:border-tea_green-500 text-sm">
 			</div>
 			<div>
 				<button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-tea_green-600 hover:bg-tea_green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-tea_green-500">Login</button>
