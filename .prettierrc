@@ -1,0 +1,17 @@
+{
+	"semi": true,
+	"singleQuote": true,
+	"bracketSameLine": true,
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"embeddedLanguageFormatting": "auto",
+	"htmlWhitespaceSensitivity": "strict",
+	"printWidth": 80,
+	"proseWrap": "preserve",
+	"quoteProps": "as-needed",
+	"tabWidth": 4,
+	"useTabs": true,
+	"endOfLine": "lf",
+	"trailingComma": "es5",
+	"plugins": ["prettier-plugin-tailwindcss"]
+}

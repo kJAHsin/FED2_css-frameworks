@@ -1,24 +1,59 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import './style.css';
+import './components/layout/SkinnyHeader.ts';
+import './components/layout/SkinnyFooter.ts';
+import setPageTitle from './utilities/setPageTitle.ts';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
+renderMainContent();
+
+async function router(page: string = window.location.pathname) {
+	if (page) {
+		switch (page) {
+			case '/':
+				await import('./pages/SkinnyHome.ts');
+				setPageTitle(page);
+				return '<skinny-home></skinny-home>';
+			case '/login/':
+				await import('./pages/SkinnyLogin.ts');
+				setPageTitle(page);
+				return '<skinny-login></skinny-login>';
+			case '/register/':
+				await import('./pages/SkinnyRegister.ts');
+				setPageTitle(page);
+				return '<skinny-register></skinny-register>';
+			case '/feed/':
+				await import('./pages/SkinnyFeed.ts');
+				setPageTitle(page);
+				return '<skinny-feed></skinny-feed>';
+			case '/profile/':
+				await import('./pages/SkinnyProfile.ts');
+				setPageTitle(page);
+				return '<skinny-profile></skinny-profile>';
+			default:
+				console.error('404: page not found, my guy!');
+				render404();
+				break;
+		}
+	}
+}
+
+async function renderMainContent() {
+	document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+    <div class="grid w-full">
+      <skinny-header></skinny-header>
+      <main class="min-h-[400px]">
+        ${await router()}
+      </main>
+      <skinny-footer></skinny-footer>
     </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+  `;
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+function render404() {
+	return `
+		<div class="grid justify-center mt-chub text-center text-baby_powder-500">    
+			<h1 class="text-6xl text-baby_powder-100">404:</h1>
+			<span>page not found</span>
+			<span>it's ok.</span>
+		</div>
+	`;
+}
